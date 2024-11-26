@@ -1,4 +1,4 @@
-module paper-news
+module paper-news-backend
 
 go 1.22.2
 
