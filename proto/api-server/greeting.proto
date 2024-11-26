@@ -1,0 +1,18 @@
+syntax = "proto3";
+package greeting;
+option go_package = ".;protobuf";
+
+// import "google-apis/annotations.proto";
+
+
+service GreetingService {
+    rpc Greet(GreetRequestPayload) returns (GreetResponsePayload);
+}
+
+message GreetRequestPayload {
+    string name = 1;
+}
+
+message GreetResponsePayload {
+    string message = 1;
+}

@@ -10,8 +10,9 @@ RUN curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v24.4
     rm protoc-24.4-linux-x86_64.zip
 
 # Goのprotobufコード生成プラグインをインストール
-RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest && \
-    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
 
 # PATHの設定
 ENV PATH=$PATH:/go/bin
